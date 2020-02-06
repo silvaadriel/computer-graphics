@@ -1,0 +1,13 @@
+version: '3'
+services:
+  python-image:
+    image: mathleite/python-image
+    volumes:
+      - ./:/var/
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    environment:
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+    container_name: python-image
+    working_dir: /var
+    tty: true
